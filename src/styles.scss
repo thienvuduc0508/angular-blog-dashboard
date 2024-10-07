@@ -1,9 +1,10 @@
 /* You can add global styles to this file, and also import other style files */
 @import "~bootstrap/dist/css/bootstrap.min.css";
+@import "~ngx-toastr/toastr";
 
 @font-face {
     font-family: 'Roboto';
-    src: url(/src/assets/fonts/Roboto-Regular.ttf) format('truetype');
+    src: url(~src/assets/fonts/Roboto-Regular.ttf) format('truetype');
 }
 
 :root {
@@ -15,7 +16,7 @@
 
 html, body {
     font-family: "Roboto", sans-serif !important;
-    font-size: 12px;
+    font-size: 14px;
     color: var(--text-color);
 }
 
@@ -50,10 +51,11 @@ html, body {
 input[type=text], input[type=email] {
     height: 60px;
     padding-left: 20px;
-    font-size: 13px;
-    width: 100%;
+    width: 100% !important;
 }
-
+.is-invalid {
+    border: 1px solid #e00404;
+}
 .btn-theme {
     height: 58px;
     border: none;
