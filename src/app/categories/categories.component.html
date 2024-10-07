@@ -1,0 +1,66 @@
+<div class="container">
+    <div class="row">
+        <div class="col-md-12 bg-secondary-theme p-5 shadow-effect">
+            <h3 class="text-center text-theme-primary">New Categories</h3>
+            <p class="text-center mb-5">You can add new categories from here ..!</p>
+
+            <form class="form-inline text-center" #categoryForm="ngForm" (ngSubmit)="submit(categoryForm)">
+                <div class="col-md-10">
+                    <input 
+                        type="text"
+                        name="category"
+                        class="form-control shadow-effect"
+                        placeholder="Add new Categories"
+                        #newCategory = 'ngModel'
+                        ngModel
+                    >
+                </div>
+                <div class="col-md-2">
+                    <button class="btn btn-block btn-info mb-2 btn-theme" [disabled]="!newCategory.value">Add Categories</button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <div class="row mt-5 mb-5">
+        <div class="col-md-12">
+            <div class="card shadow-effect">
+                <div class="card-body">
+                    <table class="table row-border hover">
+                        <thead>
+                            <tr>
+                                <th style="width: 20%;">No</th>
+                                <th style="width: 50%;">Category</th>
+                                <th style="width: 30%;">Action</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr *ngFor="let category of categoryList; let i = index; trackBy: trackCategory">
+                                <td>{{i + 1}}</td>
+                                <ng-container *ngIf="editId == category?.id; else readOnlyMode" >
+                                    <td>
+                                        <input class="edit-inline" name="categoryInput" type="text" [value]="category.data?.category" #categoryInput />
+
+                                    </td>
+                                    <td>
+                                        <button class="btn btn-sm btn-success" (click)="saveEdit(editId, categoryInput.value)"><i class="fa fa-check"></i></button>
+                                        <button class="btn btn-sm btn-danger ml-3" (click)="cancelEdit()"><i class="fa fa-times"></i></button>
+                                    </td>
+                                </ng-container>
+                                <ng-template #readOnlyMode>
+                                    <td>
+                                        {{category?.data?.category}}
+                                    </td>
+                                    <td>
+                                        <button class="btn btn-sm btn-warning" (click)="handleEdit(category?.id)">Edit</button>
+                                        <button class="btn btn-sm btn-danger ml-3" (click)="onDelete(category?.id)">Delete</button>
+                                    </td>
+                                </ng-template>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
