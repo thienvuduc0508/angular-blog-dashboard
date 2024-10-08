@@ -62,3 +62,7 @@ input[type=text], input[type=email] {
     font-size: 13px;
     background-color: var(--primary-color);
 }
+
+.angular-editor-textarea, textarea {
+    min-height: 200px !important;
+}
