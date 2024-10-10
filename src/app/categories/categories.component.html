@@ -44,7 +44,7 @@
                                     </td>
                                     <td>
                                         <button class="btn btn-sm btn-success" (click)="saveEdit(editId, categoryInput.value)"><i class="fa fa-check"></i></button>
-                                        <button class="btn btn-sm btn-danger ml-3" (click)="cancelEdit()"><i class="fa fa-times"></i></button>
+                                        <button class="btn btn-sm btn-danger ml-2" (click)="cancelEdit()"><i class="fa fa-times"></i></button>
                                     </td>
                                 </ng-container>
                                 <ng-template #readOnlyMode>
@@ -53,7 +53,7 @@
                                     </td>
                                     <td>
                                         <button class="btn btn-sm btn-warning" (click)="handleEdit(category?.id)">Edit</button>
-                                        <button class="btn btn-sm btn-danger ml-3" (click)="onDelete(category?.id)">Delete</button>
+                                        <button class="btn btn-sm btn-danger ml-2" (click)="onDelete(category?.id)">Delete</button>
                                     </td>
                                 </ng-template>
                             </tr>

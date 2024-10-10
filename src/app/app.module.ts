@@ -7,6 +7,9 @@ import { ToastrModule } from 'ngx-toastr';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { AngularEditorModule } from '@kolkov/angular-editor';
 import { HttpClientModule } from '@angular/common/http';
+import { ReactiveFormsModule } from '@angular/forms';
+import { AngularFireStorageModule } from '@angular/fire/compat/storage';
+
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -15,8 +18,10 @@ import { FooterComponent } from './layouts/footer/footer.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { environment } from 'src/environments/environment.prod';
 import { CategoriesComponent } from './categories/categories.component';
-import { NewPostComponent } from './posts/new-post/new-post.component';
 import { AllPostComponent } from './posts/all-post/all-post.component';
+import { NewUpdatePostComponent } from 'src/app/posts/new-post/new-update-post.component';
+import { LoginComponent } from './auth/login/login.component';
+import { AngularFireAuthModule } from '@angular/fire/compat/auth';
 
 @NgModule({
   declarations: [
@@ -25,8 +30,9 @@ import { AllPostComponent } from './posts/all-post/all-post.component';
     FooterComponent,
     DashboardComponent,
     CategoriesComponent,
-    NewPostComponent,
-    AllPostComponent
+    NewUpdatePostComponent,
+    AllPostComponent,
+    LoginComponent
   ],
   imports: [
     BrowserModule,
@@ -37,7 +43,10 @@ import { AllPostComponent } from './posts/all-post/all-post.component';
     AngularFirestoreModule,
     BrowserAnimationsModule,
     AngularEditorModule,
-    HttpClientModule
+    HttpClientModule,
+    ReactiveFormsModule,
+    AngularFireStorageModule,
+    AngularFireAuthModule
   ],
   providers: [],
   bootstrap: [AppComponent]

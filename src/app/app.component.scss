@@ -1,4 +1,11 @@
+.app-container {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
 .app-body {
     min-height: 45vh;
     margin-top: 100px;
+    flex-grow: 1;
 }

@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { ToastrService } from 'ngx-toastr';
 import Swal from 'sweetalert2';
 
-import { Category } from 'src/app/models/category';
+import { Category } from 'src/app/models';
 import { CategoriesService } from 'src/app/services';
 
 @Component({
